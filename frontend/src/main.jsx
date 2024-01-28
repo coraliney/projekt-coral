@@ -1,16 +1,15 @@
-
-import React from "react";
+import React from 'react'
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-
-import "./index.css";
+import { ChakraProvider, theme } from '@chakra-ui/react'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Help from './pages/Help.tsx';
-import Search from "./pages/Search.tsx";
+import Contact from "./pages/Contact.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Home from "./pages/Home.tsx";
-import Contact from './pages/Contact.tsx';
-
+import Search from './pages/Search';
+import Register from './pages/Register.tsx'
+import Login from './pages/Login.tsx'
 
 
 const router = createBrowserRouter([
@@ -19,20 +18,18 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <div className="xl:flex xl:flex-row">
-         <App />
-        </div>
+        <React.StrictMode>
+        <ChakraProvider theme={theme}>
+          <App />
+        </ChakraProvider>
+      </React.StrictMode>,
       </>
     ),
     children: [
       {
         path: "/",
         element: (
-          <main >
-            <div >
               <Home />
-            </div>
-          </main>
         ),
       },
 
@@ -41,17 +38,29 @@ const router = createBrowserRouter([
         element: <Help />,
       },
       {
+        path: "contact",
+        element: <Contact />
+      },
+
+      {
         path: "search",
-        element: <Search />,
+        element:
+          <Search />
       },
       {
         path: "navbar",
         element: <Navbar />,
       },
       {
-        path: "contact",
-        element: <Contact />,
+        path: "register",
+        element: <Register />,
       },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      
+    
     ],
   }, 
 ]);
