@@ -72,7 +72,7 @@ function Search() {
       width='100%'
     >
       <Box width='100%' height='100vh' maxWidth='100vw' position='relative'>
-        {/* Búsqueda dentro del mapa */}
+
         <Box
           p={4}
           borderRadius='lg'
@@ -80,7 +80,7 @@ function Search() {
           bgColor='white'
           shadow='base'
           width='90%'
-          maxWidth='400px' /* Limita el ancho en dispositivos pequeños */
+          maxWidth='400px'
           position='absolute'
           top='1rem'
           left='1rem'
