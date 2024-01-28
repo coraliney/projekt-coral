@@ -11,19 +11,25 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "^5.15.6",
+    "@react-google-maps/api": "^2.19.2",
     "@testing-library/jest-dom": "^6.3.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
+    "body-parser": "^1.20.2",
+    "framer-motion": "^11.0.3",
+    "jsonwebtoken": "^9.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
     "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.4",
     "styled-components": "^6.1.8",
-    "web-vitals": "^3.5.1"
+    "web-vitals": "^3.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
