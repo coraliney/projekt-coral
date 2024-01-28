@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 app.use("/api",userRouter);
 
-
+//Connect to MongoDB
 mongoose
   .connect(mongoURI)
   .then(() => {

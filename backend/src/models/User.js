@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//Prints for users
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
