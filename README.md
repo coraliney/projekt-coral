@@ -3,12 +3,12 @@
 <p>
 In this archive you will find the source code for Hitchhike.</p>
  
- ![alt text](./src/assets/image1.png)
- ![alt text](./src/assets/image2.png)
- ![alt text](./src/assets/image3.png)
- ![alt text](./src/assets/image4.png)
- ![alt text](./src/assets/image5.png)
- ![alt text](./src/assets/image6.png)
+ ![alt text](images-readme/image1.png)
+ ![alt text](images-readme/image2.png)
+ ![alt text](images-readme/image3.png)
+ ![alt text](images-readme/image4.png)
+ ![alt text](images-readme/image5.png)
+ ![alt text](images-readme/image6.png)
 
 ## Link for project documentation
 
