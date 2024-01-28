@@ -25,6 +25,7 @@ import React from 'react'
 export default function Search() {
   const { isOpen, onToggle } = useDisclosure()
 
+  //Box styled with Chakra UI
   return (
     <Box>
       <Flex
@@ -43,26 +44,26 @@ export default function Search() {
           display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5}  color="white"/>}
+            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} color="white" />}
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-        <a href="/">
-  <Image src="/src/assets/HH.png" alt="Logo" boxSize="70px" />
-</a>
-  <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-    <DesktopNav />
-  </Flex>
-</Flex>
+          <a href="/">
+            <Image src="/src/assets/HH.png" alt="Logo" boxSize="70px" />
+          </a>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+            <DesktopNav />
+          </Flex>
+        </Flex>
 
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'md'} fontWeight={400}  href={'Login'}>
+          <Button as={'a'} fontSize={'md'} fontWeight={400} href={'Login'}>
             Sign In
           </Button>
           <Button
@@ -185,9 +186,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Stack spacing={4}  onClick={children && onToggle}>
+    <Stack spacing={4} onClick={children && onToggle}>
       <Box
-      
+
         py={2}
         as="a"
         href={href ?? '#'}
@@ -196,7 +197,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         _hover={{
           textDecoration: 'none',
         }}>
-        <Text  fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
           {label}
         </Text>
         {children && (
@@ -211,8 +212,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         )}
       </Box>
 
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' 
- }}>
+      <Collapse in={isOpen} animateOpacity style={{
+        marginTop: '0!important'
+      }}>
         <Stack
           mt={2}
           pl={4}
@@ -251,6 +253,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Contact',
-    href: 'Contact', 
+    href: 'Contact',
   },
 ]

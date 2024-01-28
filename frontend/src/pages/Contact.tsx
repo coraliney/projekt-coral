@@ -15,6 +15,8 @@ import {
 import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import image from "../assets/bg13.jpg";
 
+
+//Contact with name, email and message
 function Contact() {
   return (
     <Box

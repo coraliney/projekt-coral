@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, IconButton, Input, Link, Stack, Text } from '@chakra-ui/react';
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
-
+//Footer
 function Footer() {
   return (
     <Box className="footer" bg="gray.800" color="white" py="9" textAlign="center">

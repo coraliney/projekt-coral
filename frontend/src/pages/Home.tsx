@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Box, Flex, Heading, Text, Button } from "@chakra-ui/react";
 import image from "../assets/bg7.jpg";
 
+//Homepage, info about site.
 function Home() {
   return (
     <Flex
