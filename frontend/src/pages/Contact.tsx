@@ -1,28 +1,86 @@
 import React from "react";
-import "../styles/Contact.css";
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Textarea,
+  VStack,
+  HStack,
+  IconButton,
+  Icon,
+  Heading,
+} from "@chakra-ui/react";
+import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import image from "../assets/bg13.jpg";
 
 function Contact() {
   return (
-    <div className="contact">
-      <div className="rightSide">
-        <h1> Contact Us</h1>
+    <Box
+      minH="100vh"
+      backgroundImage={`url(${image})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box
+        w="90%"
+        maxW="600px"
+        bgColor="rgba(255, 255, 255, 0.8)"
+        p="8"
+        borderRadius="md"
+        boxShadow="lg"
+      >
+        <VStack spacing="6">
+          <Heading as="h1" size="2xl" textAlign="center">
+            Contact us
+          </Heading>
 
-        <form id="contact-form" method="POST">
-          <label htmlFor="name">Full Name</label>
-          <input name="name" placeholder="Enter full name..." type="text" />
-          <label htmlFor="email">Email</label>
-          <input name="email" placeholder="Enter email..." type="email" />
-          <label htmlFor="message">Message</label>
-          <textarea
-            rows="6"
-            placeholder="Enter message..."
-            name="message"
-            required
-          ></textarea>
-          <button type="submit"> Send Message</button>
-        </form>
-      </div>
-    </div>
+          <FormControl>
+            <FormLabel htmlFor="name">Full Name</FormLabel>
+            <Input
+              name="name"
+              placeholder="Enter full name..."
+              type="text"
+              borderColor="black"
+              focusBorderColor="green.400"
+            />
+          </FormControl>
+
+          <FormControl>
+            <FormLabel htmlFor="email">Email</FormLabel>
+            <Input
+              name="email"
+              placeholder="Enter email..."
+              type="email"
+              focusBorderColor="green.400"
+              borderColor="black"
+
+            />
+          </FormControl>
+
+          <FormControl>
+            <FormLabel htmlFor="message">Message</FormLabel>
+            <Textarea
+              borderColor="black"
+              rows="6"
+              placeholder="Enter message..."
+              name="message"
+              required
+              focusBorderColor="green.400"
+            />
+          </FormControl>
+
+          <Button type="submit" colorScheme="green" w="100%">
+            Send Message
+          </Button>
+
+        </VStack>
+      </Box>
+    </Box>
   );
 }
 
