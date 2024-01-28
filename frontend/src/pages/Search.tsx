@@ -104,7 +104,7 @@ function Search() {
 
             <ButtonGroup>
               <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
-                Search car owner
+                Search Roadmap
               </Button>
               <IconButton
                 aria-label='center back'
