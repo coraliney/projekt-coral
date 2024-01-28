@@ -35,7 +35,7 @@ const Login = () => {
       emailRef.current.value = '';
       passwordRef.current.value = '';
       
-      // Después del inicio de sesión exitoso, navega a la página deseada
+   
       navigate('/');
     } catch (error) {
       console.log(error);
