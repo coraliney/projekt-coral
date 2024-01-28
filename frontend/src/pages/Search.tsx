@@ -89,19 +89,19 @@ function Search() {
           <HStack spacing={2} justifyContent='space-between'>
             <Box flex={1}>
               <Autocomplete>
-                <Input type='text' placeholder='Car' ref={originRef} />
+                <Input type='text' placeholder='From:' ref={originRef} />
               </Autocomplete>
             </Box>
             <Box flex={1}>
               <Autocomplete>
                 <Input
                   type='text'
-                  placeholder='Destination'
+                  placeholder='To:'
                   ref={destinationRef}
                 />
               </Autocomplete>
             </Box>
-  
+
             <ButtonGroup>
               <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
                 Search car owner
@@ -129,7 +129,7 @@ function Search() {
             />
           </HStack>
         </Box>
-  
+
         {/* Mapa */}
         <GoogleMap
           center={center}
@@ -151,5 +151,5 @@ function Search() {
       </Box>
     </Flex>
   );
-          }  
+}
 export default Search;
