@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { useRef } from "react";
 import { Link } from 'react-router-dom';
 import {
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  VStack,
-  Heading,
+    Box,
+    FormControl,
+    FormLabel,
+    Input,
+    Button,
+    VStack,
+    Heading,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
@@ -20,25 +20,34 @@ const Register = () => {
     const lastNameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const carRef = useRef(); //NY
+    const destinationFromRef = useRef();//NY
+    const destinationToRef = useRef();//NY
 
-    const Notify = () => { 
-        toast("Registered Successfully!"); 
+    const Notify = () => {
+        toast("Registered Successfully!");
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post(`http://localhost:3000/api/register`, { 
+            await axios.post(`http://localhost:3000/api/register`, {
                 name: firstNameRef.current.value,
                 lastname: lastNameRef.current.value,
                 email: emailRef.current.value,
-                password: passwordRef.current.value, 
+                password: passwordRef.current.value,
+                car: carRef.current.value, //NY
+                destinationtfrom: destinationFromRef.current.value, //NY
+                destiantionto: destinationToRef.current.value, //NY
             });
             Notify();
             firstNameRef.current.value = "";
             lastNameRef.current.value = "";
             emailRef.current.value = "";
             passwordRef.current.value = "";
+            carRef.current.value = ""; //NY
+            destinationFromRef.current.value = "";//NY
+            destinationToRef.current.value = "";//NY
         } catch (error) {
             console.log(error);
             console.log("Could not register");
@@ -47,7 +56,7 @@ const Register = () => {
     };
 
     return (
-        <Box   
+        <Box
             minH="100vh"
             backgroundImage={`url(${image})`}
             backgroundSize="cover"
@@ -69,7 +78,7 @@ const Register = () => {
                     </Heading>
                     <form onSubmit={handleSubmit}>
                         <FormControl id="firstName" mt="4" >
-                            <FormLabel >First Name</FormLabel>
+                            <FormLabel >First Name:</FormLabel>
                             <Input
                                 type="text"
                                 name="firstName"
@@ -79,7 +88,7 @@ const Register = () => {
                             />
                         </FormControl>
                         <FormControl id="lastName" mt="4" >
-                            <FormLabel>Last Name</FormLabel>
+                            <FormLabel>Last Name:</FormLabel>
                             <Input
                                 type="text"
                                 name="lastName"
@@ -89,7 +98,40 @@ const Register = () => {
                                 borderColor="green.400"
                             />
                         </FormControl>
-                        <FormControl id="email"  mt="4" >
+                        <FormControl id="car" mt="4" >
+                            <FormLabel>Type of Car:</FormLabel>
+                            <Input
+                                type="text"
+                                name="car"
+                                id="car"
+                                ref={carRef}
+                                focusBorderColor="green.400"
+                                borderColor="green.400"
+                            />
+                        </FormControl>
+                        <FormControl id="destinationFrom" mt="4" >
+                            <FormLabel>Destination From:</FormLabel>
+                            <Input
+                                type="text"
+                                name="destinationFrom"
+                                id="destinationFrom"
+                                ref={destinationFromRef}
+                                focusBorderColor="green.400"
+                                borderColor="green.400"
+                            />
+                        </FormControl>
+                        <FormControl id="destinationTo" mt="4" >
+                            <FormLabel>Destination To:</FormLabel>
+                            <Input
+                                type="text"
+                                name="destinationTo"
+                                id="destinationTo"
+                                ref={destinationToRef}
+                                focusBorderColor="green.400"
+                                borderColor="green.400"
+                            />
+                        </FormControl>
+                        <FormControl id="email" mt="4" >
                             <FormLabel>Email Address</FormLabel>
                             <Input
                                 type="email"
@@ -99,7 +141,7 @@ const Register = () => {
                                 borderColor="green.400"
                             />
                         </FormControl>
-                        <FormControl id="password"  mt="4">
+                        <FormControl id="password" mt="4">
                             <FormLabel>Password</FormLabel>
                             <Input
                                 type="password"
@@ -112,12 +154,12 @@ const Register = () => {
 
                         <Button type="submit" colorScheme="green" w="100%" mt="5">
                             Register
-                        </Button> 
+                        </Button>
                         <Link to="/login" >
-                        <Button background="grey" color="white" colorScheme="green"  w="100%"  mt="4">Go to Sign In</Button>
-                    </Link>
+                            <Button background="grey" color="white" colorScheme="green" w="100%" mt="4">Go to Sign In</Button>
+                        </Link>
                     </form>
-                   
+
                     <ToastContainer />
                 </VStack>
             </Box>

@@ -8,6 +8,15 @@ const userSchema = new mongoose.Schema({
   lastName: {
     type: String,
   },
+  car: {
+    type: String,
+  },
+  destinationFrom: {
+    type: String,
+  },
+  destinationTo: {
+    type: String,
+  },
   email: {
     type: String,
     required: true,
