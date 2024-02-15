@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   Box,
   Button,
@@ -11,7 +11,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaLocationArrow, FaTimes } from 'react-icons/fa';
-
 import {
   useJsApiLoader,
   GoogleMap,
@@ -32,9 +31,24 @@ function Search() {
   const [directionsResponse, setDirectionsResponse] = useState<google.maps.DirectionsResult | null>(null);
   const [distance, setDistance] = useState<string>('');
   const [duration, setDuration] = useState<string>('');
+  const [users, setUsers] = useState([]);
 
   const originRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    async function fetchUserData() {
+      try {
+        const response = await fetch('http://localhost:3000/api/users');
+        const userData = await response.json();
+        setUsers(userData);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    }
+
+    fetchUserData();
+  }, []);
 
   if (!isLoaded) {
     return <SkeletonText />;
@@ -64,6 +78,7 @@ function Search() {
     if (originRef.current) originRef.current.value = '';
     if (destinationRef.current) destinationRef.current.value = '';
   }
+
   return (
     <Flex
       flexDirection='column'
@@ -149,7 +164,20 @@ function Search() {
           )}
         </GoogleMap>
       </Box>
+
+      { }
+      <Box mt={8} width='80%'>
+        <Text fontSize='xl' fontWeight='bold'>Avaliable people to hitchhike with:</Text>
+        {users.map(user => (
+          <Box key={user.id} bg='gray.100' p={4} my={2} borderRadius='md'>
+            <Text>Name: {user.name}</Text>
+            <Text>Email: {user.email}</Text>
+            {/* Expand with more userdetails here, make it work at first..  */}
+          </Box>
+        ))}
+      </Box>
     </Flex>
   );
 }
+
 export default Search;

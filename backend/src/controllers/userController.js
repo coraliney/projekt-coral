@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import { User } from "../models/User.js";
 
-
+//Register new user
 export const register = async (req, res) => {
   try {
     console.log("Request body:", req.body);
@@ -48,6 +48,7 @@ export const register = async (req, res) => {
   }
 };
 
+//Login user
 export const login = async (req, res) => {
   try {
     const { password, email } = req.body;
@@ -75,5 +76,21 @@ export const login = async (req, res) => {
   } catch (error) {
     console.error("Error in login:", error);
     res.status(500).json({ error: "Something went wrong" });
+  }
+};
+
+//Get user based on ID.
+export const getUserById = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if(!user) {
+      console.error("Användaren hittades ej");
+      return res.status(404).json({ error: "Användaren hittades ej"});
+    }
+    console.log("Användare:", user);
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Fel vid hämtning av användare:", error);
+    res.status(500).json({ error: "Någonting gick fel"});
   }
 };

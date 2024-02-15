@@ -8,8 +8,9 @@ import Contact from "./pages/Contact.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Home from "./pages/Home.tsx";
 import Search from './pages/Search';
-import Register from './pages/Register.tsx'
-import Login from './pages/Login.tsx'
+import Register from './pages/Register.tsx';
+import Login from './pages/Login.tsx';
+import UserDetails from './pages/UserDetails.tsx';
 
 
 const router = createBrowserRouter([
@@ -59,7 +60,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-      
+      {
+        path: "user/:id",
+        element: <UserDetails />
+      }
     
     ],
   }, 

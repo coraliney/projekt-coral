@@ -1,0 +1,36 @@
+import React, { useEffect, useState } from 'react';
+
+const UserDetails: React.FC<{ userId: string }> = ({ userId }) => {
+  const [userData, setUserData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/api/users/${userId}`);
+        const data = await response.json();
+        setUserData(data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, [userId]);
+
+  return (
+    <div>
+      {userData ? (
+        <div>
+          <h2>Hitchhike along with these:</h2>
+          <p>Name: {userData.name}</p>
+          <p>Email: {userData.email}</p>
+          {/* Expand with more details about users here, make it work first! */}
+        </div>
+      ) : (
+        <p>Loading user data...</p>
+      )}
+    </div>
+  );
+};
+
+export default UserDetails;
