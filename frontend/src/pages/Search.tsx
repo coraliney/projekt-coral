@@ -71,7 +71,7 @@ function Search() {
       minHeight='100vh'
       width='100%'
     >
-      <Box width='100%' height='100vh' maxWidth='100vw' position='relative'>
+      <Box width='50%' height='100vh' maxWidth='100vw' position='relative'>
 
         <Box
           p={4}

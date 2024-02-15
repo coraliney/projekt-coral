@@ -4,6 +4,7 @@ import { User } from "../models/User.js";
 
 export const register = async (req, res) => {
   try {
+    console.log("Request body:", req.body);
     const { password, email, ...userData } = req.body;
     const trimmedEmail = email.trim();
     const trimmedPassword = password.trim();
@@ -21,14 +22,14 @@ export const register = async (req, res) => {
       return res.status(400).json({ error: "Invalid email format" });
     }
 
-    if (trimmedPassword.length < 10) {
-      console.error("Password should be at least 10 characters");
+    if (trimmedPassword.length < 8) {
+      console.error("Password should be at least 8 characters");
       return res
         .status(400)
-        .json({ error: "Password should be at least 10 characters" });
+        .json({ error: "Password should be at least 8 characters" });
     }
 
-    const hashedPassword = await bcrypt.hash(trimmedPassword, 10);
+    const hashedPassword = await bcrypt.hash(trimmedPassword, 8);
     const newUser = new User({
       ...userData,
       email: trimmedEmail,

@@ -82,6 +82,7 @@ const Register = () => {
                             <Input
                                 type="text"
                                 name="firstName"
+                                placeholder="Your name"
                                 ref={firstNameRef}
                                 focusBorderColor="green.400"
                                 borderColor="green.400"
@@ -92,6 +93,7 @@ const Register = () => {
                             <Input
                                 type="text"
                                 name="lastName"
+                                placeholder="Your lastname"
                                 id="lastname"
                                 ref={lastNameRef}
                                 focusBorderColor="green.400"
@@ -102,6 +104,7 @@ const Register = () => {
                             <FormLabel>Type of Car:</FormLabel>
                             <Input
                                 type="text"
+                                placeholder="Leave blank if no car"
                                 name="car"
                                 id="car"
                                 ref={carRef}
@@ -114,6 +117,7 @@ const Register = () => {
                             <Input
                                 type="text"
                                 name="destinationFrom"
+                                placeholder="ex. Stockholm"
                                 id="destinationFrom"
                                 ref={destinationFromRef}
                                 focusBorderColor="green.400"
@@ -125,6 +129,7 @@ const Register = () => {
                             <Input
                                 type="text"
                                 name="destinationTo"
+                                placeholder="ex. Gothenburg"
                                 id="destinationTo"
                                 ref={destinationToRef}
                                 focusBorderColor="green.400"
@@ -135,6 +140,7 @@ const Register = () => {
                             <FormLabel>Email Address</FormLabel>
                             <Input
                                 type="email"
+                                placeholder="youremail@email.com"
                                 name="email"
                                 ref={emailRef}
                                 focusBorderColor="green.400"
@@ -145,6 +151,7 @@ const Register = () => {
                             <FormLabel>Password</FormLabel>
                             <Input
                                 type="password"
+                                placeholder="least 8 characters long.."
                                 name="password"
                                 ref={passwordRef}
                                 focusBorderColor="green.400"
