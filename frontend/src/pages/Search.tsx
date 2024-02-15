@@ -19,7 +19,7 @@ import {
   DirectionsRenderer,
 } from '@react-google-maps/api';
 
-const center = { lat: 48.8584, lng: 2.2945 };
+const center = { lat: 62.00, lng: 15.00 };
 
 function Search() {
   const { isLoaded } = useJsApiLoader({
@@ -148,7 +148,7 @@ function Search() {
         {/* Map */}
         <GoogleMap
           center={center}
-          zoom={15}
+          zoom={7}
           mapContainerStyle={{ width: '100%', height: '100%' }}
           options={{
             zoomControl: false,
