@@ -94,3 +94,19 @@ export const getUserById = async (req, res) => {
     res.status(500).json({ error: "Någonting gick fel"});
   }
 };
+
+//Get all users
+export const getUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    if (!users) {
+      console.error("Användaren hittades ej");
+      return res.status(404).json({ error: "Användaren hittades ej"});
+    }
+    console.log("Användare:", users);
+    res.status(200).json(users);
+  } catch (error) {
+    console.error ("Fel vid hämtning av användare:", error);
+    res.status(500).json({error: "Någonting gick fel" });
+  }
+};

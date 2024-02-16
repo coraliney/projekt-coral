@@ -37,8 +37,8 @@ const Register = () => {
                 email: emailRef.current.value,
                 password: passwordRef.current.value,
                 car: carRef.current.value, //NY
-                destinationtfrom: destinationFromRef.current.value, //NY
-                destiantionto: destinationToRef.current.value, //NY
+                destinationfrom: destinationFromRef.current.value, //NY
+                destinationto: destinationToRef.current.value, //NY
             });
             Notify();
             firstNameRef.current.value = "";

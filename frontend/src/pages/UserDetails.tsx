@@ -22,8 +22,8 @@ const UserDetails: React.FC<{ userId: string }> = ({ userId }) => {
       {userData ? (
         <div>
           <h2>Hitchhike along with these:</h2>
-          <p>Name: {userData.name}</p>
-          <p>Email: {userData.email}</p>
+          <p>Name: {userData.firstNameRef}</p>
+          <p>Email: {userData.emailRef}</p>
           {/* Expand with more details about users here, make it work first! */}
         </div>
       ) : (
