@@ -41,7 +41,9 @@ function Search() {
       try {
         const response = await fetch('http://localhost:3000/api/users');
         const userData = await response.json();
+        /*         console.log(userData); */
         setUsers(userData);
+        /*         console.log(users); */
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -170,11 +172,11 @@ function Search() {
         <Text fontSize='xl' fontWeight='bold' color='green.400'>Available people to hitchhike with:</Text>
         {users.map(user => (
           <Box key={user.id} bg='gray.100' p={4} my={2} borderRadius='md'>
-            <Text fontWeight='bold'>Owner: {user.firstname}</Text>
+            <Text fontWeight='bold'>Owner: {user.firstNameRef}</Text>
             <Text>Car to ride with: {user.car}</Text>
             <Text>Get in touch: {user.email}</Text>
             <Text>Destination from: {user.destionationFrom}</Text>
-            <Text>Destination to: {user.destionation}</Text>
+            <Text>Destination to: {user.destinationToRef}</Text>
             {/* Expand with more userdetails here, make it work at first..  */}
           </Box>
         ))}
