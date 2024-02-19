@@ -9,6 +9,7 @@ import {
     Button,
     VStack,
     Heading,
+    Text,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
@@ -20,9 +21,9 @@ const Register = () => {
     const lastNameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
-    const carRef = useRef(); //NY
-    const destinationFromRef = useRef();//NY
-    const destinationToRef = useRef();//NY
+    const carRef = useRef();
+    const destinationFromRef = useRef();
+    const destinationToRef = useRef();
 
     const Notify = () => {
         toast("Registered Successfully!");
@@ -32,22 +33,22 @@ const Register = () => {
         event.preventDefault();
         try {
             await axios.post(`http://localhost:3000/api/register`, {
-                name: firstNameRef.current.value,
-                lastname: lastNameRef.current.value,
+                firstName: firstNameRef.current.value,
+                lastName: lastNameRef.current.value,
                 email: emailRef.current.value,
                 password: passwordRef.current.value,
-                car: carRef.current.value, //NY
-                destinationfrom: destinationFromRef.current.value, //NY
-                destinationto: destinationToRef.current.value, //NY
+                car: carRef.current.value,
+                destinationFrom: destinationFromRef.current.value,
+                destinationTo: destinationToRef.current.value,
             });
             Notify();
             firstNameRef.current.value = "";
             lastNameRef.current.value = "";
             emailRef.current.value = "";
             passwordRef.current.value = "";
-            carRef.current.value = ""; //NY
-            destinationFromRef.current.value = "";//NY
-            destinationToRef.current.value = "";//NY
+            carRef.current.value = "";
+            destinationFromRef.current.value = "";
+            destinationToRef.current.value = "";
         } catch (error) {
             console.log(error);
             console.log("Could not register");
@@ -76,6 +77,12 @@ const Register = () => {
                     <Heading as="h1" size="2xl" textAlign="center" >
                         Register
                     </Heading>
+                    <Box bg="green.100" p={4} borderRadius="md">
+                        <Text>Fill in all fields below to register as a car owner and/or hitchhiker.
+                            When you provide your car and destination, carpooling can occur.
+                            If you do not provide a car, you will be registered only as a hitchhiker.
+                            You will see both car owners and hitchhikers under 'Search', where you can find contact information for both parties."</Text>
+                    </Box>
                     <form onSubmit={handleSubmit}>
                         <FormControl id="firstName" mt="4" >
                             <FormLabel >First Name:</FormLabel>
@@ -93,7 +100,7 @@ const Register = () => {
                             <Input
                                 type="text"
                                 name="lastName"
-                                placeholder="Your lastname"
+                                placeholder="Yourlastname"
                                 id="lastname"
                                 ref={lastNameRef}
                                 focusBorderColor="green.400"

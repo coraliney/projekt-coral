@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { FaTwitter, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import image from "../assets/bg13.jpg";
+import emailjs from "@emailjs/browser";
 
 
 //Contact with name, email and message

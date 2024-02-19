@@ -168,16 +168,16 @@ function Search() {
       </Box>
 
       { }
-      <Box mt={8} width='50%' bg='green.100' p={4} borderRadius='md'>
-        <Text fontSize='xl' fontWeight='bold' color='green.400'>Available people to hitchhike with:</Text>
+      <Box mt={8} width='50%' bg='green.200' p={4} borderRadius='md'>
+        <Text fontSize='xl' fontWeight='bold' color='green.400'>Avaliable people to travel with:</Text>
         {users.map(user => (
-          <Box key={user.id} bg='gray.100' p={4} my={2} borderRadius='md'>
-            <Text fontWeight='bold'>Owner: {user.firstNameRef}</Text>
+          <Box key={user.id} bg='green.100' p={4} my={2} borderRadius='md'>
+            <Text>Traveler: {user.firstName} {user.lastName}</Text>
             <Text>Car to ride with: {user.car}</Text>
             <Text>Get in touch: {user.email}</Text>
-            <Text>Destination from: {user.destionationFrom}</Text>
-            <Text>Destination to: {user.destinationToRef}</Text>
-            {/* Expand with more userdetails here, make it work at first..  */}
+            <Text>Destination from: {user.destinationFrom}</Text>
+            <Text>Destination to: {user.destinationTo}</Text>
+            {/* Expand with more userdetails here */}
           </Box>
         ))}
       </Box>
