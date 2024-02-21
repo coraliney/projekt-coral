@@ -79,9 +79,9 @@ const Register = () => {
                     </Heading>
                     <Box bg="green.100" p={4} borderRadius="md">
                         <Text>Fill in all fields below to register as a car owner and/or hitchhiker.
-                            When you provide your car and destination, carpooling can occur.
-                            If you do not provide a car, you will be registered only as a hitchhiker.
-                            You will see both car owners and hitchhikers under 'Search', where you can find contact information for both parties."</Text>
+When you provide your car and destination, carpooling can occur.
+If you do not provide a car, you will be registered only as a hitchhiker.
+You will see both car owners and hitchhikers under 'Search', where you can find contact information for both parties."</Text>
                     </Box>
                     <form onSubmit={handleSubmit}>
                         <FormControl id="firstName" mt="4" >
