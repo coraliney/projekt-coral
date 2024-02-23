@@ -4,23 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { userRouter } from "./src/routes/userRoutes.js";
 import { loggin } from "../backend/src/middleware/logins.js";
-//NYTT
-const app = express()
-app.use(cors(
-  {
-    origin: [""],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-));
-app.use(express.json())
 
-mongoose.connect('mongodb+srv://carrogryglas:hitchhikehike@cluster0.6gxj44f.mongodb.net/hitchhike?retryWrites=true&w=majority');
-
-app.get("/", (req, res) => {
-  res.json("Hello");
-})
-//NYTT
 dotenv.config();
 
 const mongoURI = process.env.MONGODB_URI;

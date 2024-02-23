@@ -18,6 +18,7 @@ import {
   Autocomplete,
   DirectionsRenderer,
 } from '@react-google-maps/api';
+import image from "../assets/bg13.jpg";
 
 const center = { lat: 62.00, lng: 15.00 };
 
@@ -39,7 +40,9 @@ function Search() {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const response = await fetch('http://localhost:3000/api/users');
+        
+        /* http://localhost:3000/api/users */
+        const response = await fetch('https://projekt-coral-api.vercel.app/users');
         const userData = await response.json();
         /*         console.log(userData); */
         setUsers(userData);
@@ -87,6 +90,9 @@ function Search() {
       alignItems='center'
       minHeight='100vh'
       width='100%'
+      backgroundImage={`url(${image})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
     >
       <Box width='50%' height='70vh' maxWidth='100vw' margin='1%' position='relative' border='solid 5px' borderRadius='3px' borderColor='#78C69E'>
 
