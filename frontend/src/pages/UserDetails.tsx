@@ -6,7 +6,7 @@ const UserDetails: React.FC<{ userId: string }> = ({ userId }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/users/${userId}`);
+        const response = await fetch(`https://projekt-coral-api.vercel.app/users${userId}`);
         const data = await response.json();
         setUserData(data);
       } catch (error) {

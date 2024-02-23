@@ -40,7 +40,6 @@ function Search() {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        
         /* http://localhost:3000/api/users */
         const response = await fetch('https://projekt-coral-api.vercel.app/users');
         const userData = await response.json();
