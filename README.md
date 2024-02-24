@@ -51,18 +51,26 @@ Installation
 
 1. Clone the repository to your local files.
 
-2. Install npm packages for both the front- and backend. Frontend files are located in the /frontend folder. Backend files are located in the /backend folder.
-
+2. Point at backend folder, in terminal;
 ```bash
+ls
+cd backend
 npm install
 ```
 
-3. To start the Node server, in the backend folder, run:
+3. Point at frontend folder, in terminal;
+```bash
+ls
+cd frontend
+npm install
+```
 
+4. Point at backend folder again, and then run the Node server like this:
 ```bash
 npm run start
 ```
-4. To start the Vue server, in the frontend folder, run:
+
+5. Now point at the frontend folder again, and then run the Vue server like this:
 ```bash
 npm run dev
 ```
