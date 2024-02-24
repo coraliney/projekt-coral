@@ -100,7 +100,7 @@ You will see both car owners and hitchhikers under 'Search', where you can find 
                             <Input
                                 type="text"
                                 name="lastName"
-                                placeholder="Yourlastname"
+                                placeholder="Your lastname"
                                 id="lastname"
                                 ref={lastNameRef}
                                 focusBorderColor="green.400"
